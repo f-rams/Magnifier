@@ -1,4 +1,4 @@
-const URL = 'https://magnifier.onrender.com/';
+const URL = 'https://magnifier.onrender.com';
 const resultDiv = $('#resultCollapse');
 const default_image = '/static/images/profile_pics/default_image.png';
 

@@ -18,7 +18,7 @@ PHONE_KEY = os.getenv('PHONE_KEY')
 EMAIL_KEY = os.getenv('EMAIL_KEY')
 VAT_KEY = os.getenv('VAT_KEY')
 DOMAIN_KEY = os.getenv('DOMAIN_KEY')
-CONFIG_KEY = os.getenv('CONFIG_KEY')
+CONFIG_KEY = os.getenv('SECRET_KEY')
 DATABASE_URL = os.getenv('DATABASE_URL')
 
 current = os.getcwd()
