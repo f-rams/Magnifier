@@ -1,0 +1,184 @@
+{% extends "base.html" %} {% block content %}
+<div class="text-center mt-4">
+  <h1 class="">MAGNIFIER</h1>
+  <img
+    class=""
+    src="/static/images/logo/imageblack.jpg"
+    alt=""
+    style="width: 200px"
+  />
+</div>
+<div class="text-center mb-5">
+  <div class="d-flex justify-content-center">
+    <pre>
+      This is the Magnifier. This tool will help you check and validate an email
+      address, a phone number, an internet domain, or an EU VAT number. 
+      It returns a reponse with information on any of these queries to help make
+      secure decisions based on transparency and credibility.
+    </pre>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-2">
+      <span class="">PHONE NUMBER</span>
+      <br />
+      <br />
+      <i
+        class="fa-solid fa-mobile-screen-button fa-2xl"
+        style="color: #ffffff"
+      ></i>
+      <br />
+      <br />
+      Carrier, location and phone type.
+    </div>
+    <div class="col-2">
+      <span class="">EMAIL</span>
+      <br />
+      <br />
+      <i class="fa-regular fa-envelope fa-2xl" style="color: #ffffff"></i>
+      <br />
+      <br />
+      Validity, disposability, and SMTP.
+    </div>
+    <div class="col-2">
+      <span class="">VAT</span>
+      <br />
+      <br />
+      <i class="fa-solid fa-city fa-2xl" style="color: #ffffff"></i>
+      <br />
+      <br />
+      Company's name, address, and country.
+    </div>
+    <div class="col-2">
+      <span class="">DOMAIN</span>
+      <br />
+      <br />
+      <i class="fa-solid fa-globe fa-2xl" style="color: #ffffff"></i>
+      <br />
+      <br />
+      Company's industry, employees county, locality, and linkedIn.
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+
+<p class="text-center mt-3">
+  <a
+    class="btn btn-outline-light"
+    data-bs-toggle="collapse"
+    href="#collapseRegister"
+    role="button"
+    aria-expanded="false"
+    aria-controls="collapseExample"
+    id="registerBtn"
+  >
+    Register new user
+  </a>
+</p>
+<p class="text-center mt-3">
+  <a
+    class="btn btn-outline-light"
+    data-bs-toggle="collapse"
+    href="#collapseAuthenticate"
+    role="button"
+    aria-expanded="false"
+    aria-controls="collapseExample"
+    id="loginBtn"
+  >
+    Already have an account? Log in here
+  </a>
+</p>
+<div class="" id="parentCollapse">
+  <div class="collapse" id="collapseRegister" data-bs-parent="#parentCollapse">
+    <div class="d-flex justify-content-center mb-3">
+      <form action="" class="text-black w-50" method="" id="registerForm">
+        <h3 class="text-white text-center">REGISTER</h3>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="first_name"
+            id="registerFirstName"
+          />
+          <label for="floatingInput">First Name</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="last_name"
+            id="registerLastName"
+          />
+          <label for="floatingPassword">Last Name</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="registerEmail"
+          />
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            id="registerUsername"
+          />
+          <label for="floatingPassword">Username</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            id="registerPWD"
+          />
+          <label for="floatingPassword">Password</label>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-secondary" type="submit">
+            Create Account
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    class="collapse"
+    id="collapseAuthenticate"
+    data-bs-parent="#parentCollapse"
+  >
+    <div class="d-flex justify-content-center mb-3">
+      <form action="" class="text-black w-50" method="" id="authForm">
+        <h3 class="text-white text-center">LOG IN</h3>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            id="username"
+          />
+          <label for="floatingPassword">Username</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            id="password"
+          />
+          <label for="floatingPassword">Password</label>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-secondary" type="submit">Log In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-center" id="alert"></div>
+
+{% endblock %}
