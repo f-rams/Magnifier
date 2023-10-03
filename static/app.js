@@ -199,7 +199,6 @@ $('#phoneSearchForm').on('submit', async function (evt) {
     const result = await fetchResult(type);
     addResult(result);
   } catch (err) {
-    console.log(err);
     addErrorWarning();
   }
   this.reset();
@@ -210,10 +209,9 @@ $('#emailSearchForm').on('submit', async function (evt) {
   const type = $('#emailType').text();
   try {
     const result = await fetchResult(type);
-    console.log(result);
+
     addResult(result);
   } catch (err) {
-    console.log(err);
     addErrorWarning();
   }
   this.reset();
@@ -226,7 +224,6 @@ $('#vatSearchForm').on('submit', async function (evt) {
     const result = await fetchResult(type);
     addResult(result);
   } catch (err) {
-    console.log(err);
     addErrorWarning();
   }
   this.reset();
@@ -239,7 +236,6 @@ $('#domainSearchForm').on('submit', async function (evt) {
     const result = await fetchResult(type);
     addResult(result);
   } catch (err) {
-    console.log(err);
     addErrorWarning();
   }
   this.reset();
@@ -258,10 +254,6 @@ $('#cancelEdit').on('click', function (evt) {
   $('#editPicture').toggle();
   $('#editButton').toggle();
 });
-
-// changePic = (image) => {
-//   $('#userImage').attr('src', image);
-// };
 
 editPic = async function (image) {
   $('#userImage').attr('src', '');
@@ -285,9 +277,7 @@ $('#imageFile').on('change', async function (evt) {
       });
     });
   }
-  const imageURL = await result(image).then((data) => {
-    return data;
-  });
+  const imageURL = await result(image);
   $('#imageFile').val('');
   editPic(imageURL);
 });
@@ -308,7 +298,6 @@ $('#editForm').on('submit', async function (evt) {
     newUsername,
     email,
   });
-  console.log(data);
   $('#username').val(data.username);
   $('#userUsername').text(data.username);
   $('#email').val(data.email);
@@ -323,7 +312,6 @@ $('.deleteSearch').on('click', async function (evt) {
   const username = $('#userUsername').text();
   const searchId = $(this).attr('id');
   const parent = $(this).parents().get(4);
-  console.log(username, searchId);
   let values = { username, searchId };
   const { data } = await axios.post(`${URL}/${searchId}/delete`, values);
   $('#searchesLength').text(data.count);

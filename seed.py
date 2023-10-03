@@ -1,5 +1,5 @@
 from app import db
-from models import Country, Vat_Country, get_phone_pair, get_vat_pair
+from models import Country, Vat_Country
 from countries import country_vat_codes, country_phone_codes
 
 db.drop_all()

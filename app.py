@@ -18,7 +18,7 @@ PHONE_KEY = os.getenv('PHONE_KEY')
 EMAIL_KEY = os.getenv('EMAIL_KEY')
 VAT_KEY = os.getenv('VAT_KEY')
 DOMAIN_KEY = os.getenv('DOMAIN_KEY')
-# CONFIG_KEY = os.getenv('CONFIG_KEY')
+CONFIG_KEY = os.getenv('CONFIG_KEY')
 DATABASE_URL = os.getenv('DATABASE_URL')
 
 current = os.getcwd()
@@ -26,14 +26,12 @@ parent_path = Path(current).parent
 
 default_image = '/static/images/profile_pics/default_image.png'
 
-# DATABASE_URL = 'postgresql://fnqpduby:W-2CWprjJ1M5SYHLLHMDyCgVfsM6jzLj@mahmud.db.elephantsql.com/fnqpduby'
-
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
-app.config['SECRET_KEY'] = '123VITORIA'
+app.config['SECRET_KEY'] = CONFIG_KEY
 connect_db(app)
 app.app_context().push()
 
