@@ -10,8 +10,8 @@ from datetime import datetime
 import requests
 import base64
 import os
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 
 PHONE_KEY = os.getenv('PHONE_KEY')

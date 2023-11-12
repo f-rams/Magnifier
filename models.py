@@ -25,7 +25,7 @@ class User(db.Model):
     email = db.Column(db.String(50), nullable=False, unique=True)
     first_name = db.Column(db.String(30), nullable=False)
     last_name = db.Column(db.String(30), nullable=False)
-    image_url = db.Column(db.Text, nullable=False,
+    image_url = db.Column(db.Text, nullable=True,
                           default=default_image)
     searches = db.Relationship(
         'Search', backref='user')
@@ -61,53 +61,53 @@ class Phone(db.Model):
     __tablename__ = "phones"
     id = db.Column(db.Integer, primary_key=True,
                    autoincrement=True, nullable=False)
-    number = db.Column(db.Text, nullable=False)
-    valid = db.Column(db.Text, nullable=False)
-    prefix = db.Column(db.Text, nullable=False)
-    local = db.Column(db.Text, nullable=False)
-    country = db.Column(db.Text, nullable=False)
-    location = db.Column(db.Text, nullable=False)
-    phone_type = db.Column(db.Text, nullable=False)
-    carrier = db.Column(db.Text, nullable=False)
+    number = db.Column(db.Text, nullable=True)
+    valid = db.Column(db.Text, nullable=True)
+    prefix = db.Column(db.Text, nullable=True)
+    local = db.Column(db.Text, nullable=True)
+    country = db.Column(db.Text, nullable=True)
+    location = db.Column(db.Text, nullable=True)
+    phone_type = db.Column(db.Text, nullable=True)
+    carrier = db.Column(db.Text, nullable=True)
 
 
 class Email(db.Model):
     __tablename__ = "emails"
     id = db.Column(db.Integer, primary_key=True,
                    autoincrement=True, nullable=False)
-    email = db.Column(db.Text, nullable=False)
-    is_valid = db.Column(db.Text, nullable=False)
-    is_free_email = db.Column(db.Text, nullable=False)
-    is_disposable = db.Column(db.Text, nullable=False)
-    is_role = db.Column(db.Text, nullable=False)
-    is_catchall = db.Column(db.Text, nullable=False)
-    is_mx_found = db.Column(db.Text, nullable=False)
-    is_smtp_valid = db.Column(db.Text, nullable=False)
+    email = db.Column(db.Text, nullable=True)
+    is_valid = db.Column(db.Text, nullable=True)
+    is_free_email = db.Column(db.Text, nullable=True)
+    is_disposable = db.Column(db.Text, nullable=True)
+    is_role = db.Column(db.Text, nullable=True)
+    is_catchall = db.Column(db.Text, nullable=True)
+    is_mx_found = db.Column(db.Text, nullable=True)
+    is_smtp_valid = db.Column(db.Text, nullable=True)
 
 
 class Vat (db.Model):
     __tablename__ = "vats"
     id = db.Column(db.Integer, primary_key=True,
                    autoincrement=True, nullable=False)
-    number = db.Column(db.Text, nullable=False)
-    valid = db.Column(db.Text, nullable=False)
-    company_name = db.Column(db.Text, nullable=False)
-    company_address = db.Column(db.Text, nullable=False)
-    country = db.Column(db.Text, nullable=False)
+    number = db.Column(db.Text, nullable=True)
+    valid = db.Column(db.Text, nullable=True)
+    company_name = db.Column(db.Text, nullable=True)
+    company_address = db.Column(db.Text, nullable=True)
+    country = db.Column(db.Text, nullable=True)
 
 
 class Domain(db.Model):
     __tablename__ = "domains"
     id = db.Column(db.Integer, primary_key=True,
                    autoincrement=True, nullable=False)
-    domain = db.Column(db.Text, nullable=False)
-    name = db.Column(db.Text, nullable=False)
-    year_founded = db.Column(db.Text, nullable=False)
-    industry = db.Column(db.Text, nullable=False)
-    employees_count = db.Column(db.Text, nullable=False)
-    locality = db.Column(db.Text, nullable=False)
-    country = db.Column(db.Text, nullable=False)
-    linkedin = db.Column(db.Text, nullable=False)
+    domain = db.Column(db.Text, nullable=True)
+    name = db.Column(db.Text, nullable=True)
+    year_founded = db.Column(db.Text, nullable=True)
+    industry = db.Column(db.Text, nullable=True)
+    employees_count = db.Column(db.Text, nullable=True)
+    locality = db.Column(db.Text, nullable=True)
+    country = db.Column(db.Text, nullable=True)
+    linkedin = db.Column(db.Text, nullable=True)
 
 
 class Search(db.Model):
@@ -148,4 +148,3 @@ class Vat_Country(db.Model):
     __tablename__ = "vat_countries"
     country_name = db.Column(db.Text, primary_key=True, autoincrement=False)
     country_code = db.Column(db.Text, nullable=False)
-
