@@ -1,4 +1,4 @@
-const URL = 'http://127.0.0.1:5000/';
+const URL = 'https://magnifier.onrender.com';
 const resultDiv = $('#resultCollapse');
 
 fetchResult = async function (type) {

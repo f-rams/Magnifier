@@ -4,7 +4,7 @@ from fetchAPI import fetchDomain, fetchEmail, fetchPhone, fetchVAT
 import os
 
 
-CONFIG_KEY = os.getenv('CONFIG_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 DATABASE_URL = os.getenv('DATABASE_URL')
 
 
@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
-app.config['SECRET_KEY'] = CONFIG_KEY
+app.config['SECRET_KEY'] = SECRET_KEY
 connect_db(app)
 app.app_context().push()
 
