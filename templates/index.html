@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block content %}
-<div class="text-center mt-4">
+<div class="text-center mt-4 container">
   <h1 class="">MAGNIFIER</h1>
   <img
     class=""
@@ -8,19 +8,19 @@
     style="width: 200px"
   />
 </div>
-<div class="text-center mb-5">
-  <div class="d-flex justify-content-center">
-    <pre>
+<div class="text-center mb-5 container">
+  <div class="d-flex justify-content-center container">
+    <p>
       This is the Magnifier. This tool will help you check and validate an email
-      address, a phone number, a company's internet domain, or an EU VAT number. 
+      address, a phone number, a company's internet domain, or an EU VAT number.
       It returns a reponse with information on any of these queries to help make
       secure decisions based on transparency and credibility.
-    </pre>
+    </p>
   </div>
   <div class="row">
-    <div class="col-2"></div>
-    <div class="col-2">
-      <span class="">PHONE NUMBER</span>
+    <!-- <div class="col-2"></div> -->
+    <div class="col-3">
+      <span class="text-center">PHONE NUMBER</span>
       <br />
       <br />
       <i
@@ -31,8 +31,8 @@
       <br />
       Carrier, location and phone type.
     </div>
-    <div class="col-2">
-      <span class="">EMAIL</span>
+    <div class="col-3">
+      <span class="text-center">EMAIL</span>
       <br />
       <br />
       <i class="fa-regular fa-envelope fa-2xl" style="color: #ffffff"></i>
@@ -40,8 +40,8 @@
       <br />
       Validity, disposability, and SMTP.
     </div>
-    <div class="col-2">
-      <span class="">VAT</span>
+    <div class="col-3">
+      <span class="text-center">EU VAT</span>
       <br />
       <br />
       <i class="fa-solid fa-city fa-2xl" style="color: #ffffff"></i>
@@ -49,8 +49,8 @@
       <br />
       Company's name, address, and country.
     </div>
-    <div class="col-2">
-      <span class="">DOMAIN</span>
+    <div class="col-3">
+      <span class="text-center">DOMAIN</span>
       <br />
       <br />
       <i class="fa-solid fa-globe fa-2xl" style="color: #ffffff"></i>
@@ -58,127 +58,217 @@
       <br />
       Company's industry, employees county, locality, and linkedIn.
     </div>
-    <div class="col-2"></div>
+  </div>
+</div>
+<div class="text-center mt-5">
+  <p class="d-inline-flex gap-1">
+    <button
+      class="btn btn-outline-light"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#searchPanel"
+      aria-expanded="false"
+      aria-controls="searchPanel"
+      id="newSearchBtn"
+    >
+      <h2>Perform a Search</h2>
+    </button>
+  </p>
+</div>
+<div class="d-flex justify-content-center mb-3 container">
+  <div class="collapse" id="searchPanel">
+    <div class="" id="">
+      <div
+        class="card card-body bg-black d-inline-block text-center border border-white"
+        style="width: 450px"
+      >
+        <div class="d-inline-block">
+          <a
+            href="#collapseEmail"
+            data-bs-toggle="collapse"
+            class="link-light link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+            id="emailSearch"
+            >EMAIL</a
+          >
+        </div>
+        <div class="d-inline-block mx-5">
+          <a
+            href="#collapsePhone"
+            data-bs-toggle="collapse"
+            class="link-light link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+            id="phoneSearch"
+            >PHONE</a
+          >
+        </div>
+        <div class="d-inline-block me-5">
+          <a
+            href="#collapseVat"
+            data-bs-toggle="collapse"
+            class="link-light link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+            id="vatSearch"
+            >VAT</a
+          >
+        </div>
+        <div class="d-inline-block">
+          <a
+            href="#collapseDomain"
+            data-bs-toggle="collapse"
+            class="link-light link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+            id="domainSearch"
+            >DOMAIN</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-center mx-3">
+  <div class="collapse" id="collapsePhone">
+    <div
+      class="card card-body bg-black d-inline-block text-center border border-white"
+    >
+      <h5>SEARCH TYPE: <span id="phoneType">PHONE</span></h5>
+      <span class=""
+        >Select the country code and type the phone number with the local code
+        and click 'submit'</span
+      >
+      <form action="" , method="" class="mt-2" id="phoneSearchForm">
+        <div class="d-flex justify-content-center">
+          <select
+            class="form-select form-select-lg mb-3 me-2 w-75"
+            aria-label="Large select example"
+            name="country_code"
+            id="countryCode"
+          >
+            <option selected>Open this select menu</option>
+            {% for country in countries %}
+            <option value="{{country.country_code}}">
+              {{country.country_name}} {{country.country_code}}
+            </option>
+            {% endfor %}
+          </select>
+          <div class="form-floating mb-3 text-center">
+            <input
+              type="text"
+              class="form-control w-100"
+              id="phoneNumber"
+              name="phone_number"
+            />
+            <label for="phoneNumber">Phone Number</label>
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-light">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-center container">
+  <div class="collapse" id="collapseEmail">
+    <div
+      class="card card-body bg-black d-inline-block text-center border border-white w-100"
+    >
+      <h5>SEARCH TYPE: <span id="emailType">EMAIL</span></h5>
+      <span class="">Type the email address and click 'submit'. </span>
+      <form action="" method="" class="mt-2" id="emailSearchForm">
+        <div class="d-flex justify-content-center">
+          <div class="form-floating mb-3 text-center w-100">
+            <input
+              type="text"
+              class="form-control w-100"
+              id="emailAddress"
+              name="emailInput"
+            />
+            <label for="emailInput">Email address</label>
+          </div>
+        </div>
+        <div class="text-center">
+          <a href="">
+            <button type="submit" class="btn btn-light">Submit</button></a
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-center mx-3">
+  <div class="collapse" id="collapseVat">
+    <div
+      class="card card-body bg-black d-inline-block text-center border border-white"
+    >
+      <h5>SEARCH TYPE: <span id="vatType">VAT</span></h5>
+      <span class=""
+        >Select the country code and type the VAT number and click 'submit'.
+        <br />(valid only for the EU territory)</span
+      >
+      <form action="" , method="" class="mt-2" id="vatSearchForm">
+        <div class="d-flex justify-content-center">
+          <select
+            class="form-select form-select-lg mb-3 me-2"
+            aria-label="Large select example"
+            name="countryVat"
+            style="width: fit-content"
+            id="countryVatCode"
+          >
+            <option selected>Open this select menu</option>
+            {% for country in vats %}
+            <option value="{{country.country_code}}">
+              {{country.country_name}} - <b>{{country.country_code}}</b>
+            </option>
+            {% endfor %}
+          </select>
+          <div class="form-floating mb-3 text-center">
+            <input
+              type="text"
+              class="form-control w-100"
+              id="vatNumber"
+              name="vatInput"
+            />
+            <label for="vatInput">VAT Number</label>
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-light">Submit</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 
-<p class="text-center mt-3">
-  <a
-    class="btn btn-outline-light"
-    data-bs-toggle="collapse"
-    href="#collapseRegister"
-    role="button"
-    aria-expanded="false"
-    aria-controls="collapseExample"
-    id="registerBtn"
-  >
-    Register new user
-  </a>
-</p>
-<p class="text-center mt-3">
-  <a
-    class="btn btn-outline-light"
-    data-bs-toggle="collapse"
-    href="#collapseAuthenticate"
-    role="button"
-    aria-expanded="false"
-    aria-controls="collapseExample"
-    id="loginBtn"
-  >
-    Already have an account? Log in here
-  </a>
-</p>
-<div class="" id="parentCollapse">
-  <div class="collapse" id="collapseRegister" data-bs-parent="#parentCollapse">
-    <div class="d-flex justify-content-center mb-3">
-      <form action="" class="text-black w-50" method="" id="registerForm">
-        <h3 class="text-white text-center">REGISTER</h3>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            name="first_name"
-            id="registerFirstName"
-          />
-          <label for="floatingInput">First Name</label>
+<div class="d-flex justify-content-center container">
+  <div class="collapse" id="collapseDomain">
+    <div
+      class="card card-body bg-black d-inline-block text-center border border-white"
+    >
+      <h5>SEARCH TYPE: <span id="domainType">DOMAIN</span></h5>
+      <span class="">Type the company's website and click 'submit'. </span>
+      <form action="" method="" class="mt-2" id="domainSearchForm">
+        <div class="input-group mb-3">
+          <span class="input-group-text">http://www.</span>
+          <div class="form-floating">
+            <input
+              type="text"
+              class="form-control"
+              id="domainAddress"
+              name="domainInput"
+            />
+            <label for="domainAddress">Eg: airbnb.com</label>
+          </div>
         </div>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            name="last_name"
-            id="registerLastName"
-          />
-          <label for="floatingPassword">Last Name</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control"
-            name="email"
-            id="registerEmail"
-          />
-          <label for="floatingInput">Email address</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            name="username"
-            id="registerUsername"
-          />
-          <label for="floatingPassword">Username</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="password"
-            class="form-control"
-            name="password"
-            id="registerPWD"
-          />
-          <label for="floatingPassword">Password</label>
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn btn-secondary" type="submit">
-            Create Account
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-  <div
-    class="collapse"
-    id="collapseAuthenticate"
-    data-bs-parent="#parentCollapse"
-  >
-    <div class="d-flex justify-content-center mb-3">
-      <form action="" class="text-black w-50" method="" id="authForm">
-        <h3 class="text-white text-center">LOG IN</h3>
-        <div class="form-floating mb-3">
-          <input
-            type="text"
-            class="form-control"
-            name="username"
-            id="username"
-          />
-          <label for="floatingPassword">Username</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input
-            type="password"
-            class="form-control"
-            name="password"
-            id="password"
-          />
-          <label for="floatingPassword">Password</label>
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn btn-secondary" type="submit">Log In</button>
+        <div class="text-center">
+          <a href="">
+            <button type="submit" class="btn btn-light">Submit</button></a
+          >
         </div>
       </form>
     </div>
   </div>
 </div>
-<div class="d-flex justify-content-center" id="alert"></div>
+<div class="d-flex justify-content-center mt-3 container">
+  <div class="d-flex justify-content-center w-75">
+    <div class="collapse" id="resultCollapse" style="width: 700px"></div>
+  </div>
+</div>
 
 {% endblock %}

@@ -1,6 +1,9 @@
-from app import db
+from models import db
+from app import app
 from models import Country, Vat_Country
 from countries import country_vat_codes, country_phone_codes
+app.app_context().push()
+
 
 db.drop_all()
 db.create_all()

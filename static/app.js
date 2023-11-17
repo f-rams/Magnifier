@@ -1,45 +1,5 @@
-const URL = 'https://magnifier.onrender.com';
+const URL = 'http://127.0.0.1:5000/';
 const resultDiv = $('#resultCollapse');
-const default_image = '/static/images/profile_pics/default_image.png';
-
-async function register(evt) {
-  const username = $('#registerUsername').val();
-  const first_name = $('#registerFirstName').val();
-  const last_name = $('#registerLastName').val();
-  const email = $('#registerEmail').val();
-  const pwd = $('#registerPWD').val();
-  const data = { username, first_name, last_name, pwd, email };
-  const response = await axios.post(`${URL}/magnifier/register`, data);
-  if (response.data.response === 'Email already registered') {
-    $('#alert').empty();
-    $('#alert').append(
-      '<div class="alert alert-danger text-center w-0" role="alert"> This email has already been registered in our system.</div>'
-    );
-  }
-  if (response.data.response === 'Username already registered') {
-    $('#alert').empty();
-    $('#alert').append(
-      '<div class="alert alert-danger text-center w-0" role="alert">Sorry, but this username is already in use.</div>'
-    );
-  } else if (response.data.response === 'Successful registration') {
-    window.location = `/magnifier/${username}`;
-  }
-}
-
-async function authenticate(evt) {
-  let username = $('#username').val();
-  let password = $('#password').val();
-  let data = { username, password };
-  const response = await axios.post(`${URL}/login`, data);
-  if (response.data.response == 'Invalid user') {
-    $('#alert').empty();
-    $('#alert').append(
-      '<div class="alert alert-danger text-center w-0" role="alert">User not found or the password is incorrect!</div>'
-    );
-  } else {
-    window.location = `/magnifier/${username}`;
-  }
-}
 
 fetchResult = async function (type) {
   const username = $('#userUsername').text();
@@ -47,7 +7,7 @@ fetchResult = async function (type) {
     const countryCode = $('#countryCode').val();
     const phoneNumber = $('#phoneNumber').val();
     let values = { countryCode, phoneNumber, type };
-    const { data } = await axios.post(`${URL}/${username}/search`, values);
+    const { data } = await axios.post(`${URL}/search`, values);
     return data;
   } else if (type == 'EMAIL') {
     const emailAddress = $('#emailAddress').val();
@@ -87,7 +47,11 @@ addResult = function (result) {
     if (result.type === 'Email') {
       $(resultDiv).append(
         `<div class="card card-body bg-black d-inline-block text-center border border-white pt-0 w-100"
-        id="resultDiv"><span class="text-center  mb-2">Search Result:</span>
+        id="resultDiv">
+        <div class="d-flex justify-content-end">
+        <button type="button" class="btn-close btn-close-white mt-2"   aria-label="Close" id="closeResultBTN" ></button>
+        </div>
+        <h4 class="text-center  mb-2">Search Result:</h4>
         <div class="d-flex justify-content-between mt-2">
         <h5>Type: ${result.type}</h4>
         <h5>Search date: ${result.date}</h4>
@@ -97,18 +61,16 @@ addResult = function (result) {
         <span>Is the email free: ${result.free_email}</span>
         <span>Is the email valid: ${result.valid}</span>
         <span>Is the email disposable: ${result.disposable}</span>
-        <br>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong><small>Search results are automatically saved on the user's profile and can be accessed through the user infomation link.</strong></small>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
        </div>
       </div>`
       );
     } else if (result.type === 'Vat') {
       $(resultDiv).append(
         `<div class="card card-body bg-black d-inline-block text-center border border-white pt-0 w-100"
-        id="resultDiv"><span class="text-center  mb-2">Search Result:</span>
+        id="resultDiv">
+        <div class="d-flex justify-content-end">
+        <button type="button" class="btn-close btn-close-white mt-2" aria-label="Close" id="closeResultBTN"></button></div>
+        <h4 class="text-center  mb-2">Search Result:</h4>
       <div class="d-flex justify-content-between mt-2">
         <h5>Type: ${result.type}</h4>
         <h5>Search date: ${result.date}</h4>
@@ -118,22 +80,20 @@ addResult = function (result) {
         <span>Company name: ${result.company_name}</span>
         <span>Company address : ${result.company_address}</span>
         <span>Is this VAT valid? ${result.valid}</span>
-        <br>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong><small>Search results are automatically saved on the user's profile and can be accessed through the user infomation link.</strong></small> 
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
        </div>
       </div>`
       );
     } else if (result.type === 'Phone') {
       $(resultDiv).append(
         `<div class="card card-body bg-black d-inline-block text-center border border-white pt-0 w-100"
-        id="resultDiv"><span class="text-center  mb-2">Search Result:</span>
+        id="resultDiv">
+        <div class="d-flex justify-content-end">
+        <button type="button" class="btn-close btn-close-white mt-2" aria-label="Close" id="closeResultBTN"></button></div>
+        <h4 class="text-center  mb-2">Search Result:</h4>
       <div class="d-flex justify-content-between mt-2">
         <h5>Type: ${result.type}</h4>
         <h5>Search date: ${result.date}</h4>
-       </div>
+        </div>
        <div class="d-flex flex-column">
         <span>Phone Number: ${result.prefix}${result.phone_number}</span>
         <span>Prefix: ${result.prefix}</span>
@@ -142,18 +102,16 @@ addResult = function (result) {
         <span>Location: ${result.location}</span>
         <span>Type: ${result.phone_type}</span>
         <span>Carrier: ${result.carrier}</span>
-        <br>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong><small>Search results are automatically saved on the user's profile and can be accessed through the user infomation link.</strong></small>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
        </div>
       </div>`
       );
     } else if (result.type === 'Domain') {
       $(resultDiv).append(
         `<div class="card card-body bg-black d-inline-block text-center border border-white pt-0 w-100"
-        id="resultDiv"><span class="text-center  mb-2">Search Result:</span>
+        id="resultDiv">
+        <div class="d-flex justify-content-end">
+        <button type="button" class="btn-close btn-close-white mt-2" aria-label="Close" id="closeResultBTN"></button></div>
+        <h4 class="text-center  mb-2">Search Result:</h4>
       <div class="d-flex justify-content-between mt-2">
         <h5>Type: ${result.type}</h4>
         <h5>Search date: ${result.date}</h4>
@@ -167,11 +125,6 @@ addResult = function (result) {
         <span>Founded in: ${result.year_founded}</span>
         <span>Number of employees: ${result.employees_count}</span>
         <span>Linkedin: <a href="http://www.${result.linkedin}">${result.linkedin}</a></span>
-        <br>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong><small>Search results are automatically saved on the user's profile and can be accessed through the user infomation link.</strong></small>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
        </div>
       </div>`
       );
@@ -181,14 +134,8 @@ addResult = function (result) {
   $('#resultCollapse').collapse('show');
 };
 
-$('#registerForm').on('submit', function (evt) {
-  evt.preventDefault();
-  register();
-});
-
-$('#authForm').on('submit', function (evt) {
-  evt.preventDefault();
-  authenticate();
+$('body').on('click', '#closeResultBTN', function (evt) {
+  $(resultDiv).empty();
 });
 
 $('#phoneSearchForm').on('submit', async function (evt) {
@@ -208,8 +155,7 @@ $('#emailSearchForm').on('submit', async function (evt) {
   const type = $('#emailType').text();
   try {
     const result = await fetchResult(type);
-
-    addResult(result);
+    await addResult(result);
   } catch (err) {
     addErrorWarning();
   }
@@ -238,83 +184,6 @@ $('#domainSearchForm').on('submit', async function (evt) {
     addErrorWarning();
   }
   this.reset();
-});
-
-$('#editButton').on('click', function (evt) {
-  $('#userInfo').collapse('toggle');
-  $('#userImage').toggleClass('opacity-50');
-  $('#editPicture').toggle();
-  $(this).toggle();
-});
-
-$('#cancelEdit').on('click', function (evt) {
-  $('#userInfo').collapse('toggle');
-  $('#userImage').toggleClass('opacity-50');
-  $('#editPicture').toggle();
-  $('#editButton').toggle();
-});
-
-editPic = async function (image) {
-  $('#userImage').attr('src', '');
-  const username = $('#userUsername').text();
-  try {
-    const { data } = await axios.patch(`${URL}/${username}/picture`, { image });
-    $('#userImage').attr('src', data.image);
-  } catch {
-    $('#userImage').attr('src', default_image);
-  }
-};
-
-$('#imageFile').on('change', async function (evt) {
-  const image = this.files[0];
-  function result(file) {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    return new Promise((resolve, reject) => {
-      reader.addEventListener('load', () => {
-        resolve(reader.result);
-      });
-    });
-  }
-  const imageURL = await result(image);
-  $('#imageFile').val('');
-  editPic(imageURL);
-});
-
-$('#deletePicture').on('click', async function (evt) {
-  const image = '';
-  $('#imageFile').val('');
-  editPic(image);
-});
-
-$('#editForm').on('submit', async function (evt) {
-  evt.preventDefault();
-  const username = $('#userUsername').text();
-  const newUsername = $('#newUsername').val();
-  const email = $('#email').val();
-  const { data } = await axios.patch(`${URL}/${username}/edit`, {
-    username,
-    newUsername,
-    email,
-  });
-  $('#username').val(data.username);
-  $('#userUsername').text(data.username);
-  $('#email').val(data.email);
-  $('#userEmail').text(`Email: ${data.email}`);
-  $('#editButton').toggle();
-  $('#userImage').toggleClass('opacity-50');
-  $('#editPicture').toggle();
-  $('#userInfo').collapse('toggle');
-});
-
-$('.deleteSearch').on('click', async function (evt) {
-  const username = $('#userUsername').text();
-  const searchId = $(this).attr('id');
-  const parent = $(this).parents().get(4);
-  let values = { username, searchId };
-  const { data } = await axios.post(`${URL}/${searchId}/delete`, values);
-  $('#searchesLength').text(data.count);
-  $(parent).remove();
 });
 
 $('#newSearchBtn').on('click', function (evt) {
