@@ -46,7 +46,7 @@ It uses four different API KEYs for each type of request: phone, email, VAT, and
 
 ## Description
 
-This tool validates queries on phone numbers, emails, VAT registration numbers (only for the EU), and internet domains. It's supposed to work as a lightweight OSINT (open-source investigation) tool that will assess the data provided by the user and return public information regarding it.
+This tool validates queries on phone numbers, emails, VAT registration numbers (only for the EU), and companies' internet domains. It's supposed to work as a lightweight OSINT (open-source investigation) tool that will assess the data provided by the user and return public information regarding it.
 
 The following but not limited information can be retrieved based on each asset:
 
@@ -58,7 +58,7 @@ The following but not limited information can be retrieved based on each asset:
 
 - Domain: company name, location, number of employees, foundation year, LinkedIn
 
-The app works mainly with ASYNC functionality and uses a PostgreSQL DB to store data related to each search. To use the tool directly from the browser, a user registration, with a username and password, is required.
+The app works mainly with ASYNC functionality and uses a PostgreSQL DB to store data related to each search. 
 
 ## Usage
 
