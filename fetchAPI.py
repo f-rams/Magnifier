@@ -4,10 +4,10 @@ import requests
 import os
 
 
-PHONE_KEY = CONFIG_KEY = os.getenv('PHONE_KEY')
-EMAIL_KEY = CONFIG_KEY = os.getenv('EMAIL_KEY')
-VAT_KEY = CONFIG_KEY = os.getenv('VAT_KEY')
-DOMAIN_KEY = CONFIG_KEY = os.getenv('DOMAIN_KEY')
+PHONE_KEY = os.getenv('PHONE_KEY')
+EMAIL_KEY = os.getenv('EMAIL_KEY')
+VAT_KEY = os.getenv('VAT_KEY')
+DOMAIN_KEY = os.getenv('DOMAIN_KEY')
 
 
 def fetchVAT(type):

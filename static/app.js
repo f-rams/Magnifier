@@ -140,11 +140,15 @@ $('body').on('click', '#closeResultBTN', function (evt) {
 
 $('#phoneSearchForm').on('submit', async function (evt) {
   evt.preventDefault();
+  $(resultDiv).empty();
   const type = $('#phoneType').text();
+  $('.loadingMSG').show();
   try {
     const result = await fetchResult(type);
+    $('.loadingMSG').hide();
     addResult(result);
   } catch (err) {
+    $('.loadingMSG').hide();
     addErrorWarning();
   }
   this.reset();
@@ -152,11 +156,15 @@ $('#phoneSearchForm').on('submit', async function (evt) {
 
 $('#emailSearchForm').on('submit', async function (evt) {
   evt.preventDefault();
+  $(resultDiv).empty();
   const type = $('#emailType').text();
+  $('.loadingMSG').show();
   try {
     const result = await fetchResult(type);
+    $('.loadingMSG').hide();
     await addResult(result);
   } catch (err) {
+    $('.loadingMSG').hide();
     addErrorWarning();
   }
   this.reset();
@@ -164,11 +172,15 @@ $('#emailSearchForm').on('submit', async function (evt) {
 
 $('#vatSearchForm').on('submit', async function (evt) {
   evt.preventDefault();
+  $(resultDiv).empty();
   const type = $('#vatType').text();
+  $('.loadingMSG').show();
   try {
     const result = await fetchResult(type);
+    $('.loadingMSG').hide();
     addResult(result);
   } catch (err) {
+    $('.loadingMSG').hide();
     addErrorWarning();
   }
   this.reset();
@@ -176,11 +188,15 @@ $('#vatSearchForm').on('submit', async function (evt) {
 
 $('#domainSearchForm').on('submit', async function (evt) {
   evt.preventDefault();
+  $(resultDiv).empty();
   const type = $('#domainType').text();
+  $('.loadingMSG').show();
   try {
     const result = await fetchResult(type);
+    $('.loadingMSG').hide();
     addResult(result);
   } catch (err) {
+    $('.loadingMSG').hide();
     addErrorWarning();
   }
   this.reset();
