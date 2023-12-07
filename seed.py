@@ -26,3 +26,6 @@ def get_vat_pair(dict):
 get_phone_pair(country_phone_codes)
 
 get_vat_pair(country_vat_codes)
+
+db.session.commit()
+db.session.close()
