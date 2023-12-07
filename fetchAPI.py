@@ -31,7 +31,7 @@ def fetchVAT(type):
                             vat_search_id=new_vat_search.id)
         db.session.add(new_search)
         db.session.commit()
-    db.session.close()
+
     return jsonify(type=type, date=new_search.showdate, vat_number=new_vat_search.number, valid=new_vat_search.valid, company_name=new_vat_search.company_name, company_address=new_vat_search.company_address, country=new_vat_search.country)
 
 
@@ -57,7 +57,7 @@ def fetchDomain(type):
             search_type=type, domain_search_id=new_domain_search.id)
         db.session.add(new_search)
         db.session.commit()
-    db.session.close()
+
     return jsonify(type=type, date=new_search.showdate, name=new_domain_search.name, country=new_domain_search.country, employees_count=new_domain_search.employees_count, domain=new_domain_search.domain, industry=new_domain_search.industry, locality=new_domain_search.locality, year_founded=new_domain_search.year_founded, linkedin=new_domain_search.linkedin)
 
 
@@ -88,7 +88,7 @@ def fetchPhone(type):
                             phone_search_id=new_phone_search.id)
         db.session.add(new_search)
         db.session.commit()
-    db.session.close()
+
     return jsonify(type=type, date=new_search.showdate, phone_number=new_phone_search.number, prefix=new_phone_search.prefix, local=new_phone_search.local, country=new_phone_search.country, location=new_phone_search.location, phone_type=new_phone_search.phone_type, carrier=new_phone_search.carrier)
 
 
@@ -116,5 +116,4 @@ def fetchEmail(type):
                                 email_search_id=new_email_search.id)
             db.session.add(new_search)
             db.session.commit()
-    db.session.close()
     return jsonify(type=type, date=new_search.showdate, email=new_email_search.email, valid=new_email_search.is_valid, free_email=new_email_search.is_free_email, disposable=new_email_search.is_disposable, role=new_email_search.is_role, catchall=new_email_search.is_catchall, mx=new_email_search.is_mx_found, smtp=new_email_search.is_smtp_valid)
