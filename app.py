@@ -11,11 +11,6 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
-    'pool_size': 5,
-    'pool_recycle': 5,
-    'pool_pre_ping': True
-}
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['SECRET_KEY'] = SECRET_KEY
 connect_db(app)
