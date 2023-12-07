@@ -36,18 +36,12 @@ def homepage():
 def search():
     type = request.json.get('type').capitalize()
     if type == 'Phone':
-        res = fetchPhone(type)
-        db.session.close()
-        return res
+        return fetchPhone(type)
     elif type == 'Email':
-        res = fetchEmail(type)
-        db.session.close()
-        return res
+        return fetchEmail(type)
+
     elif type == 'Vat':
-        res = fetchVAT(type)
-        db.session.close()
-        return res
+        return fetchVAT(type)
+
     elif type == 'Domain':
-        res = fetchDomain(type)
-        db.session.close()
-        return res
+        return fetchDomain(type)
