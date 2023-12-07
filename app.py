@@ -5,16 +5,17 @@ import os
 
 
 SECRET_KEY = os.getenv('SECRET_KEY')
-# DATABASE_URL = os.getenv('DATABASE_URL')
+DATABASE_URL = os.getenv('DATABASE_URL')
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://fnqpduby:W-2CWprjJ1M5SYHLLHMDyCgVfsM6jzLj@mahmud.db.elephantsql.com/fnqpduby'
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
-#     'pool_recycle': 300,
-#     'pool_pre_ping': True
-# }
+app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+    'pool_size': 5,
+    'pool_recycle': 5,
+    'pool_pre_ping': True
+}
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['SECRET_KEY'] = 'VITÓRIA123'
 connect_db(app)
