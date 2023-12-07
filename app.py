@@ -1,7 +1,10 @@
 from flask import Flask, request, render_template
 from models import connect_db, Country, Vat_Country
 from fetchAPI import fetchDomain, fetchEmail, fetchPhone, fetchVAT
+from models import db
 from sqlalchemy.pool import NullPool
+from sqlalchemy.pool import QueuePool
+
 import os
 
 
@@ -12,7 +15,7 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {"pool_pre_ping": True,
-                                           "pool_recycle": 600, "poolclass": NullPool}
+                                           "pool_recycle": 600, 'pool': QueuePool(reset_on_return=False),  "poolclass": NullPool}
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['SECRET_KEY'] = SECRET_KEY
@@ -24,6 +27,7 @@ app.app_context().push()
 def homepage():
     countries = Country.query.all()
     vat_codes = Vat_Country.query.all()
+    db.session.close()
     return render_template('index.html',  countries=countries, vats=vat_codes)
 
 
