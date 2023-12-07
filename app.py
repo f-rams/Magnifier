@@ -17,7 +17,7 @@ app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
     'pool_pre_ping': True
 }
 app.config['SQLALCHEMY_ECHO'] = True
-app.config['SECRET_KEY'] = 'VITÓRIA123'
+app.config['SECRET_KEY'] = SECRET_KEY
 connect_db(app)
 app.app_context().push()
 
