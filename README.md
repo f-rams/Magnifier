@@ -3,10 +3,9 @@
 - [Magnifier](#magnifier)
   - [Description](#description)
   - [Usage](#usage)
-  - [Tech Stack](#techstack)
+  - [Tech Stack](#tech-stack)
   - [Installation](#installation)
   - [Abstract API](#abstract-api)
-  - [Usage](#usage)
  
 ## Description
 
