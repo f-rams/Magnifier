@@ -21,7 +21,7 @@ The following but not limited information can be retrieved based on each asset:
 
 - Domain: company name, location, number of employees, foundation year, LinkedIn
 
-The app works mainly with ASYNC functionality and uses a PostgreSQL DB to store data related to each search. 
+The app works main with Python and Flask on the back-end to send requests to the third-party API and retrieve data pertaining to the user input. PostgreSQL is to store data related to each search.
 
 ## Usage
 
