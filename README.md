@@ -1,10 +1,10 @@
 # Magnifier
 
 - [Magnifier](#magnifier)
-  - [Tech Stack](#teckstack)
+  - [Description](#description)
+  - [Tech Stack](#techstack)
   - [Installation](#installation)
   - [Abstract API](#abstract-api)
-  - [Description](#description)
   - [Usage](#usage)
  
 ## Description
