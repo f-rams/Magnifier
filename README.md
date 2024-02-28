@@ -9,9 +9,9 @@
  
 ## Description
 
-This tool validates queries on phone numbers, emails, VAT registration numbers (only for the EU), and companies' internet domains. It's supposed to work as a lightweight OSINT (open-source investigation) tool that will assess the data provided by the user and return public information regarding it.
+This tool validates queries on phone numbers, emails, VAT registration numbers (only for the EU), and companies' internet domains. It's supposed to work as a lightweight OSINT (open-source investigation) tool that evaluates the data provided by the user and returns public information regarding it.
 
-The following but not limited information can be retrieved based on each asset:
+The following information can be retrieved based on each asset:
 
 - Phone number: phone validity, phone local and international location, carrier, type
 
@@ -21,11 +21,11 @@ The following but not limited information can be retrieved based on each asset:
 
 - Domain: company name, location, number of employees, foundation year, LinkedIn
 
-The app works main with Python and Flask on the back-end to send requests to the third-party API and retrieve data pertaining to the user input. PostgreSQL is to store data related to each search.
+The app works mainly with Python and Flask on the back end to send requests to the third-party API and retrieve data pertaining to the user input. PostgreSQL is to store data related to each search.
 
 ## Usage
 
-Select the type of query that you want to perform and type the asset to be validated by the third-party API
+Select the type of query that you want to perform and type the asset to be validated.
 
 - Phone Query: Select the country and type the phone number, including the local code
 
@@ -39,9 +39,9 @@ Each result is automatically saved in the user's section, accessed anytime from 
 
 ## Tech Stack
 
-This aplications was developed with the support of the following tools:
+This application was developed with the support of the following tools:
 
-- Programming languges: JavaScript, [Python](https://www.python.org)
+- Programming languages: JavaScript, [Python](https://www.python.org)
 - Database storage and management: [PostgreSQL](https://www.postgresql.org), [Postico](https://eggerapps.at/postico2/)
 - Frontend libraries: [Booststrap](https://getbootstrap.com), [jQuery](https://jquery.com),
 - HTTP Client: [Axios](https://axios-http.com/docs/intro)
@@ -60,7 +60,7 @@ Run the following commands from the capstone directory in this order:
 $ pip install -r requirements.txt
 ```
 
-After installing the requirements, run a python interactive shell to execute a series of commands on the app.py file. Using [Ipython](#https://ipython.org/), run the following commands fro the main folder:
+After installing the requirements, run a Python interactive shell to execute a series of commands on the app.py file. Using [Ipython](#https://ipython.org/), run the following commands from the main folder:
 
 - Run the seed.py file to create de database:
 
