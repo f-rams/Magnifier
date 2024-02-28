@@ -42,7 +42,7 @@ Each result is automatically saved in the user's section, accessed anytime from 
 This application was developed with the support of the following tools:
 
 - Programming languages: JavaScript, [Python](https://www.python.org)
-- Database storage and management: [PostgreSQL](https://www.postgresql.org), [Postico](https://eggerapps.at/postico2/)
+- Database storage and management: [PostgreSQL](https://www.postgresql.org)
 - Frontend libraries: [Booststrap](https://getbootstrap.com), [jQuery](https://jquery.com),
 - HTTP Client: [Axios](https://axios-http.com/docs/intro)
 - Backend libraries: [Flask](https://flask.palletsprojects.com/en/3.0.x/)
