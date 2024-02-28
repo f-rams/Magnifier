@@ -45,7 +45,7 @@ This application was developed with the support of the following tools:
 - Database storage and management: [PostgreSQL](https://www.postgresql.org), [Postico](https://eggerapps.at/postico2/)
 - Frontend libraries: [Booststrap](https://getbootstrap.com), [jQuery](https://jquery.com),
 - HTTP Client: [Axios](https://axios-http.com/docs/intro)
-- Backend libraries: [Jinja](https://jinja.palletsprojects.com/en/3.1.x/)
+- Backend libraries: [Flask](https://flask.palletsprojects.com/en/3.0.x/)
 - Third-party API: [Abstract API](https://www.abstractapi.com)
 
 ## Installation
