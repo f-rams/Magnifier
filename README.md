@@ -87,7 +87,7 @@ Abstraci API endpoints (GET only) used for this application:
 
 Email:
 
-https<area>://emailvalidation.abstractapi.com/v1/?api_key=**EMAIL_KEY**&email=**xyz@email.com**
+https<area>://emailvalidation.abstractapi.com/v1/?api_key=**EMAIL_KEY**&email=**xyz<area>@email.com**
 
 ```
 {
