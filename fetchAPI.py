@@ -38,7 +38,7 @@ def fetchVAT(type):
 
 
 def fetchDomain(type):
-    domain_address = request.json.get('domainAddress')
+    domain_address = request.json.get('domainAddress').lower()
     domains_list = [item.domain for item in Domain.query.all()]
     if domain_address in domains_list:
         new_domain_search = Domain.query.filter(
