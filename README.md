@@ -23,19 +23,39 @@ The following information can be retrieved based on each asset:
 
 The app works mainly with Python and Flask on the back end to send requests to the third-party API and retrieve data pertaining to the user input. PostgreSQL is to store data related to each search.
 
+### Powerful OSINT Tool for Data Validation and Enrichment
+
+This user-friendly tool empowers security analysts, recruiters, and marketers to validate and enrich data related to phone numbers, emails, VAT registration numbers (limited to the EU), and company domains.
+
+### Validate and Gather Insights:
+
+- Phone Numbers: Check validity, pinpoint location (local & international), identify carrier, and determine phone type (mobile/landline).
+- Emails: Verify email validity and distinguish between free and paid accounts.
+- VAT Numbers (EU Only): Confirm registration, uncover company name, location, and address.
+- Domains: Extract company information, estimate employee count, discover foundation year, and locate LinkedIn profile.
+
+### Technical Backbone:
+
+- Python and Flask: Power the backend, seamlessly interacting with third-party APIs to retrieve data based on user input.
+- PostgreSQL Database: Securely stores information gathered from each search for future reference (if applicable).
+
+### Transparency and User Trust:
+
+- Third-Party Data Sources: Leverages reputable third-party API [(Abstract )](https://www.abstractapi.com) to provide enriched data.
+- Data Limitations: Acknowledges potential limitations in data accuracy and completeness based on the user's inpurt.
+
+
 ## Usage
 
-Select the type of query that you want to perform and type the asset to be validated.
+This user guide outlines the intuitive process of using our data validation tool:
 
-- Phone Query: Select the country and type the phone number, including the local code
+Choose Your Validation Type:
 
-- Email query: Type the email address
+- Phone: Select the country and enter the phone number, including the local area code.
+- Email: Simply type the email address you want to verify.
+- VAT Number (EU Only): Choose the relevant country code and enter the company's VAT number.
+- Domain: Type the domain name of the website or organization you wish to research.
 
-- VAT number: Select the country code and type the company's VAT number
-
-- Domain: Type the domain of the subject to be researched
-
-Each result is automatically saved in the user's section, accessed anytime from the navbar. Since all results come from a third-party validation API, they can't be edited or manipulated.
 
 ## Tech Stack
 
