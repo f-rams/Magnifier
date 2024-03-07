@@ -11,7 +11,7 @@
 ## Description
 
 
-### Powerful OSINT Tool for Data Validation and Enrichment
+### OSINT Tool for Data Validation and Enrichment
 
 This user-friendly tool empowers security analysts, recruiters, and marketers to validate and enrich data related to phone numbers, emails, VAT registration numbers (limited to the EU), and company domains.
 
