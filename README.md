@@ -9,19 +9,6 @@
  
 ## Description
 
-This tool validates queries on phone numbers, emails, VAT registration numbers (only for the EU), and companies' internet domains. It's supposed to work as a lightweight OSINT (open-source investigation) tool that evaluates the data provided by the user and returns public information regarding it.
-
-The following information can be retrieved based on each asset:
-
-- Phone number: phone validity, phone local and international location, carrier, type
-
-- Email: email validity, free/paid plan.
-
-- VAT: company name, location, address (only for EU)
-
-- Domain: company name, location, number of employees, foundation year, LinkedIn
-
-The app works mainly with Python and Flask on the back end to send requests to the third-party API and retrieve data pertaining to the user input. PostgreSQL is to store data related to each search.
 
 ### Powerful OSINT Tool for Data Validation and Enrichment
 
