@@ -124,8 +124,8 @@ https://emailvalidation.abstractapi.com/v1/?api_key=EMAIL_KEY&email=xyz@email.co
 }
 ```
 
-Phone 
-https://phonevalidation.abstractapi.com/v1/?api_key=PHONE_KEY&phone=17777777777
+Phone:  
+https://phonevalidation.abstractapi.com/v1/?api_key={PHONE_KEY}&phone={17777777777}
 ```
 {
     "phone": "17777777777",
