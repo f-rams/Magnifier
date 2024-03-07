@@ -6,6 +6,7 @@
   - [Tech Stack](#tech-stack)
   - [Installation](#installation)
   - [Abstract API](#abstract-api)
+  - [Endpoints](#endpoints)
  
 ## Description
 
@@ -81,11 +82,11 @@ This tool uses a third-party API [(Abstract )](https://www.abstractapi.com) to a
 
 It uses four different API KEYs for each type of request: phone, email, VAT, and domain. After registering on the website, save the keys on the **app.py** file or save them on a separate env file and import them to the first. Assign each key to its respective variable (**PHONE_KEY, EMAIL_KEY, VAT_KEY, DOMAIN_KEY**).
 
-### Endpoints
+## Endpoints
 
 Abstraci API endpoints (GET only) used for this application:
 
-Email:
+### Email:
 
 https<area>://emailvalidation.abstractapi.com/v1/?api_key=**EMAIL_KEY**&email=**xyz<area>@email.com**
 
@@ -126,7 +127,7 @@ https<area>://emailvalidation.abstractapi.com/v1/?api_key=**EMAIL_KEY**&email=**
 }
 ```
 
-Phone:  
+### Phone:  
 
 https<area>://phonevalidation.abstractapi.com/v1/?api_key=**PHONE_KEY**&phone=**17777777777**
 
@@ -149,7 +150,7 @@ https<area>://phonevalidation.abstractapi.com/v1/?api_key=**PHONE_KEY**&phone=**
 }
 ```
 
-VAT (EU only):
+### VAT (EU only):
 
 https<area>://vat.abstractapi.com/v1/validate/?api_key=**VAT_KEY**&vat_number=**SE556656688001**
 
@@ -167,7 +168,7 @@ https<area>://vat.abstractapi.com/v1/validate/?api_key=**VAT_KEY**&vat_number=**
     }
 }
 ```
-Domain:
+### Domain:
 
 https<area>://companyenrichment.abstractapi.com/v1/?api_key=**DOMAIN_KEY**&domain=**google.com**
 
