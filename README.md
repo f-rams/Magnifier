@@ -85,8 +85,10 @@ It uses four different API KEYs for each type of request: phone, email, VAT, and
 
 Abstraci API endpoints (GET only) used for this application:
 
-Email 
-https://emailvalidation.abstractapi.com/v1/?api_key=EMAIL_KEY&email=xyz@email.com
+Email:
+
+https<area>://emailvalidation.abstractapi.com/v1/?api_key=**EMAIL_KEY**&email=**xyz@email.com**
+
 ```
 {
     "email": "xyz@email.com",
@@ -125,7 +127,9 @@ https://emailvalidation.abstractapi.com/v1/?api_key=EMAIL_KEY&email=xyz@email.co
 ```
 
 Phone:  
-https<area>://phonevalidation.abstractapi.com/v1/?api_key={PHONE_KEY}&phone={17777777777}
+
+https<area>://phonevalidation.abstractapi.com/v1/?api_key=**PHONE_KEY**&phone=**17777777777**
+
 ```
 {
     "phone": "17777777777",
@@ -145,8 +149,10 @@ https<area>://phonevalidation.abstractapi.com/v1/?api_key={PHONE_KEY}&phone={177
 }
 ```
 
-VAT (EU only)
-https://vat.abstractapi.com/v1/validate/?api_key=VAT_KEY&vat_number=SE556656688001
+VAT (EU only):
+
+https<area>://vat.abstractapi.com/v1/validate/?api_key=**VAT_KEY**&vat_number=**SE556656688001**
+
 ```
 {
     "vat_number": "SE556656688001",
@@ -161,8 +167,10 @@ https://vat.abstractapi.com/v1/validate/?api_key=VAT_KEY&vat_number=SE5566566880
     }
 }
 ```
-DOMAIN
-https://companyenrichment.abstractapi.com/v1/?api_key=DOMAIN_KEY&domain=google.com
+Domain:
+
+https<area>://companyenrichment.abstractapi.com/v1/?api_key=**DOMAIN_KEY**&domain=**google.com**
+
 ```
 {
     "name": "Google",
