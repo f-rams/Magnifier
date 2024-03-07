@@ -28,7 +28,7 @@ This user-friendly tool empowers security analysts, recruiters, and marketers to
 
 ### Transparency and User Trust:
 
-- Third-Party Data Sources: Leverages reputable third-party API [(Abstract )](https://www.abstractapi.com) to provide enriched data.
+- Third-Party Data Sources: Leverages reputable third-party API ([Abstract API](https://www.abstractapi.com)) to provide enriched data.
 - Data Limitations: Acknowledges potential limitations in data accuracy and completeness based on the user's inpurt.
 
 
