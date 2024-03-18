@@ -22,16 +22,14 @@ This user-friendly tool empowers security analysts, recruiters, and marketers to
 - VAT Numbers (EU Only): Confirm registration, uncover company name, location, and address.
 - Domains: Extract company information, estimate employee count, discover foundation year, and locate LinkedIn profile.
 
-### Technical Backbone:
+### Backend and Data Management
 
-- Python and Flask: Power the backend, seamlessly interacting with third-party APIs to retrieve data based on user input.
+- Python and Flask: Backend language and web framework to connect with Abstract API to retrieve data based on user input.
 - PostgreSQL Database: Securely stores information gathered from each search for future reference (if applicable).
 
 ### Transparency and User Trust:
 
-- Third-Party Data Sources: Leverages reputable third-party API ([Abstract API](https://www.abstractapi.com)) to provide enriched data.
-- Data Limitations: Acknowledges potential limitations in data accuracy and completeness based on the user's inpurt.
-
+- Third-Party Data Sources: Leverages third-party API ([Abstract API](https://www.abstractapi.com)) to provide enriched data.
 
 ## Usage
 
@@ -84,7 +82,7 @@ It uses four different API KEYs for each type of request: phone, email, VAT, and
 
 ## Endpoints
 
-Abstraci API endpoints (GET only) used for this application:
+Abstract API endpoints (GET only) used for this application:
 
 ### Email:
 
