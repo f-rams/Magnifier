@@ -60,20 +60,20 @@ This application was developed with the support of the following tools:
 
 Create a free account at [Abstract API](https://www.abstractapi.com) and save the API keys for the four different types of queries: phone, domain, email, and VAT.
 
-Run the following commands from the capstone directory in this order:
+From the root directory, run the following command:
 
-- Requirements:
+- Package installment:
 
 ```shell
 $ pip install -r requirements.txt
 ```
 
-After installing the requirements, run a Python interactive shell to execute a series of commands on the app.py file. Using [Ipython](#https://ipython.org/), run the following commands from the main folder:
+This application uses a SQL-Alchemy ORM and PostgreSQL database. There is no script that creates the database, so the user needs to provide a database URI to be stored in a .env file in the root directory and later accessed by the SQL-Alchemy in the app.py file. Alternatively, the user can provide the URI directly as a value for "app.config['SQLALCHEMY_DATABASE_URI'] = {URI}" in the app.py file.
 
-- Run the seed.py file to create de database:
+- After setting up the database and connecting to it, run the seed.py file:
 
 ```shell
-$ %run seed.py
+$ python3 seed.py
 ```
 
 ## Abstract API
