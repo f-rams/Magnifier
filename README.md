@@ -15,19 +15,21 @@
 
 This user-friendly tool empowers security analysts, recruiters, and marketers to validate and enrich data related to phone numbers, emails, VAT registration numbers (limited to the EU), and company domains.
 
-### Validate and Gather Insights:
+### Features
+
+Validate and Gather Insights:
 
 - Phone Numbers: Check validity, pinpoint location (local & international), identify carrier, and determine phone type (mobile/landline).
 - Emails: Verify email validity and distinguish between free and paid accounts.
 - VAT Numbers (EU Only): Confirm registration, uncover company name, location, and address.
 - Domains: Extract company information, estimate employee count, discover foundation year, and locate LinkedIn profile.
 
-### Backend and Data Management
+Backend and Data Management:
 
 - Python and Flask: Backend language and web framework to connect with Abstract API to retrieve data based on user input.
 - PostgreSQL Database: Securely stores information gathered from each search for future reference (if applicable).
 
-### Transparency and User Trust:
+Transparency and User Trust:
 
 - Third-Party Data Sources: Leverages third-party API ([Abstract API](https://www.abstractapi.com)) to provide enriched data.
 
