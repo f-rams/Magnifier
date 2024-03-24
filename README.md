@@ -68,7 +68,7 @@ From the root directory, run the following command:
 $ pip install -r requirements.txt
 ```
 
-This application uses a SQL-Alchemy ORM and PostgreSQL database. There is no script that creates the database, so the user needs to provide a database URI to be stored in a .env file in the root directory and later accessed by the SQL-Alchemy in the app.py file. Alternatively, the user can provide the URI directly as a value for "app.config['SQLALCHEMY_DATABASE_URI'] = {URI}" in the app.py file.
+This application uses a SQL-Alchemy ORM and PostgreSQL database. There is no script that creates the database, so the user needs to provide a database URI to be stored in a .env file in the root directory and later accessed by SQL-Alchemy in the app.py file. Alternatively, the user can provide the URI directly as a value for "app.config['SQLALCHEMY_DATABASE_URI'] = {URI}" in the app.py file.
 
 - After setting up the database and connecting to it, run the seed.py file:
 
