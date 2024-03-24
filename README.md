@@ -84,7 +84,7 @@ It uses four different API KEYs for each type of request: phone, email, VAT, and
 
 ## Endpoints
 
-Abstract API endpoints (GET only) used for this application:
+The application returns a custom response based on the following Abstract API endpoints (GET only):
 
 ### Email:
 
