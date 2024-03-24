@@ -88,7 +88,7 @@ The application returns a custom response based on the following Abstract API en
 
 ### Email:
 
-https<area>://emailvalidation.abstractapi.com/v1/?api_key=**EMAIL_KEY**&email=**xyz<area>@email.com**
+E.g. https<area>://emailvalidation.abstractapi.com/v1/?api_key=**EMAIL_KEY**&email=**xyz<area>@email.com**
 
 ```
 {
@@ -129,7 +129,7 @@ https<area>://emailvalidation.abstractapi.com/v1/?api_key=**EMAIL_KEY**&email=**
 
 ### Phone:  
 
-https<area>://phonevalidation.abstractapi.com/v1/?api_key=**PHONE_KEY**&phone=**17777777777**
+E.g. https<area>://phonevalidation.abstractapi.com/v1/?api_key=**PHONE_KEY**&phone=**17777777777**
 
 ```
 {
@@ -152,7 +152,7 @@ https<area>://phonevalidation.abstractapi.com/v1/?api_key=**PHONE_KEY**&phone=**
 
 ### VAT (EU only):
 
-https<area>://vat.abstractapi.com/v1/validate/?api_key=**VAT_KEY**&vat_number=**SE556656688001**
+E.g. https<area>://vat.abstractapi.com/v1/validate/?api_key=**VAT_KEY**&vat_number=**SE556656688001**
 
 ```
 {
@@ -170,7 +170,7 @@ https<area>://vat.abstractapi.com/v1/validate/?api_key=**VAT_KEY**&vat_number=**
 ```
 ### Domain:
 
-https<area>://companyenrichment.abstractapi.com/v1/?api_key=**DOMAIN_KEY**&domain=**google.com**
+E.g. https<area>://companyenrichment.abstractapi.com/v1/?api_key=**DOMAIN_KEY**&domain=**google.com**
 
 ```
 {
