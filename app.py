@@ -4,16 +4,21 @@ from fetchAPI import fetchDomain, fetchEmail, fetchPhone, fetchVAT
 from models import db
 from sqlalchemy.pool import NullPool
 from sqlalchemy.pool import QueuePool
+from sqlalchemy.engine.url import URL
 
 import os
 
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 DATABASE_URL = os.getenv('DATABASE_URL')
+SUPABASE_API_KEY = os.getenv('SUPABASE_API_KEY')
+
+parsed_url = URL.create(DATABASE_URL)
+parsed_url = parsed_url.set(query={"apikey": SUPABASE_API_KEY})
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
+app.config['SQLALCHEMY_DATABASE_URI'] = parsed_url
 app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {"pool_pre_ping": True,
                                            "pool_recycle": 300, "poolclass": NullPool}
 app.config['SQLALCHEMY_RESET_ON_RETURN'] = False
